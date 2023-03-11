@@ -8,10 +8,10 @@ public class App {
             {"Y","Y","Pass"},
             {"Y","Y","Pass"},
             {"N","N","Fail"},
-            {"Y","N","Pass"},
-            {"Y","N","Pass"},
+            {"N","Y","Pass"},
+            {"N","Y","Pass"},
             {"Y","Y","Fail"},
-            {"N","Y","Fail"},
+            {"Y","N","Fail"},
             {"N","N","Fail"},
   
         };
@@ -30,6 +30,8 @@ public class App {
         for(int i=0;i<attributes.length;i++){
             double gini = doubleConditionGini(dataset, "Y", "N", i);
             if(gini<smallestgini){
+                biggini=smallestgini;
+                badindex=bestindex;
                 smallestgini=gini;
                 bestattrib=attributes[i];
                 bestindex=i;
